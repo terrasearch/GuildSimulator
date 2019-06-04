@@ -17,7 +17,34 @@
     </vaadin-button>
     <vaadin-progress-bar width-full></vaadin-progress-bar>
    </vaadin-form-layout>
-   <vaadin-vertical-layout size-full :expand></vaadin-vertical-layout>
+   <vaadin-vertical-layout size-full :expand>
+    <vaadin-tree>
+     <node item="D" icon="fonticon://Vaadin-Icons/e7d7">
+       Desktops 
+     </node>
+     <node item="D1" parent="D" icon="fonticon://Vaadin-Icons/e7d7">
+       Dell GX240 
+     </node>
+     <node item="D2" parent="D" icon="fonticon://Vaadin-Icons/e7d7">
+       Dell GX260 
+     </node>
+     <node item="D3" parent="D" icon="fonticon://Vaadin-Icons/e7d7">
+       Dell GX280 
+     </node>
+     <node item="L" icon="fonticon://Vaadin-Icons/e782">
+       Laptops 
+     </node>
+     <node item="L1" parent="L" icon="fonticon://Vaadin-Icons/e782">
+       IBM T40 
+     </node>
+     <node item="L2" parent="L" icon="fonticon://Vaadin-Icons/e782">
+       IBM T41 
+     </node>
+     <node item="L3" parent="L" icon="fonticon://Vaadin-Icons/e782">
+       IBM T42 
+     </node>
+    </vaadin-tree>
+   </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </body>
 </html>
