@@ -1,12 +1,12 @@
 package at.englert.bertram.guildsimulator.model;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class StatsTest {
+class StatsTest {
     @Test
-    public void testStats() {
+    void testStats() {
         final int stat1 = 0;
         final int stat2 = 255;
         final Stats testPlayer = new Stats(stat1, stat1, stat1);
