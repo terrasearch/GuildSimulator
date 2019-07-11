@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'com.devsoap.plugin.vaadin' version '1.2.0'
     id 'idea'
 }
 
@@ -13,11 +12,11 @@ repositories {
 
 dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter:5.4.2')
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.2'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
+    compile group: 'de.gurkenlabs', name: 'litiengine', version: '0.4.17'
 }
 
 test {
     useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
 }
