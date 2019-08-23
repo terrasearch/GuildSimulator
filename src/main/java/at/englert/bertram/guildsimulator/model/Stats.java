@@ -15,7 +15,7 @@ public class Stats {
         return strength;
     }
 
-    public void setStrength(int strength) {
+    public void setStrength(final int strength) {
         this.strength = strength;
     }
 
@@ -23,7 +23,7 @@ public class Stats {
         return intelligence;
     }
 
-    public void setIntelligence(int intelligence) {
+    public void setIntelligence(final int intelligence) {
         this.intelligence = intelligence;
     }
 
@@ -31,7 +31,7 @@ public class Stats {
         return vitality;
     }
 
-    public void setVitality(int vitality) {
+    public void setVitality(final int vitality) {
         this.vitality = vitality;
     }
 }
