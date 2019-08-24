@@ -8,6 +8,6 @@ import at.englert.bertram.guildsimulator.control.game.GameManager;
 public class Main {
     public static void main(final String[] args) {
         final GameManager gameManager = new GameManager();
-        gameManager.startGame();
+        gameManager.startGame(args);
     }
 }
