@@ -21,6 +21,9 @@ public class MainMenu extends GameScreenBase {
         registerKeyEvent(KeyEvent.VK_DOWN, (key) -> increaseEntry());
         registerKeyEvent(KeyEvent.VK_UP, (key) -> decreaseEntry());
         registerKeyEvent(KeyEvent.VK_ENTER, (key) -> {
+            if (selectedMenuEntry == MenuEntry.newGame) {
+                manager.switchScreen(new PrototypeMap(manager));
+            }
             if (selectedMenuEntry == MenuEntry.quit) {
                 manager.stopGame();
             }

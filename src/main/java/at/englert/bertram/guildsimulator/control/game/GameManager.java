@@ -1,9 +1,8 @@
 package at.englert.bertram.guildsimulator.control.game;
 
-import at.englert.bertram.guildsimulator.view.element.Player;
 import at.englert.bertram.guildsimulator.view.screen.MainMenu;
 import de.gurkenlabs.litiengine.Game;
-import de.gurkenlabs.litiengine.environment.Environment;
+import de.gurkenlabs.litiengine.gui.screens.Screen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,14 +18,15 @@ public class GameManager {
 
     private void startToMainMenu() {
         Game.start();
-        final Environment prototypeMap = new Environment("maps/PrototypeMap1.tmx");
-        Game.world().loadEnvironment(prototypeMap);
-        prototypeMap.add(new Player());
-        Game.screens().display(new MainMenu(this));
+        switchScreen(new MainMenu(this));
     }
 
     public void stopGame() {
         log.debug("Game stopped");
         System.exit(ExitCodes.SUCCESS.getCodeValue());
+    }
+
+    public void switchScreen(Screen screen) {
+        Game.screens().display(screen);
     }
 }
