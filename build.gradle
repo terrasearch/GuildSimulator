@@ -11,9 +11,19 @@ repositories {
 }
 
 sourceSets {
-    main.java.srcDir "src"
-    test.java.srcDir "test"
-    main.resources.srcDirs = ["sprites", "audio", "maps", "misc", "res"]
+    main {
+        java {
+            srcDir "src"
+        }
+        resources {
+            srcDirs "sprites", "audio", "localization", "maps", "misc", "res"
+        }
+    }
+    test {
+        java {
+            srcDir "test"
+        }
+    }
 }
 
 dependencies {
@@ -25,6 +35,7 @@ dependencies {
     compile group: 'net.java.jinput', name: 'jinput-platform', version: '2.0.7'
     compile group: 'net.java.jinput', name: 'jinput', version: '2.0.7'
 }
+
 test {
     useJUnitPlatform()
 }

@@ -10,6 +10,13 @@ import java.util.function.Consumer;
 public class GameScreenBase extends GameScreen {
     protected final GameManager gameManager;
 
+    public GameScreenBase(final GameManager gameManager, final String mapName) {
+        super(mapName);
+        this.gameManager = gameManager;
+        registerKeyEvent(KeyEvent.VK_ESCAPE, (key -> gameManager.stopGame()));
+    }
+
+
     public GameScreenBase(final GameManager gameManager) {
         this.gameManager = gameManager;
         registerKeyEvent(KeyEvent.VK_ESCAPE, (key -> gameManager.stopGame()));

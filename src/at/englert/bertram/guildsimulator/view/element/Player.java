@@ -6,6 +6,8 @@ import de.gurkenlabs.litiengine.annotation.CollisionInfo;
 import de.gurkenlabs.litiengine.annotation.EntityInfo;
 import de.gurkenlabs.litiengine.annotation.MovementInfo;
 import de.gurkenlabs.litiengine.entities.Creature;
+import de.gurkenlabs.litiengine.graphics.Camera;
+import de.gurkenlabs.litiengine.graphics.PositionLockCamera;
 import de.gurkenlabs.litiengine.input.PlatformingMovementController;
 
 @EntityInfo(width = 18, height = 18)
@@ -15,7 +17,13 @@ import de.gurkenlabs.litiengine.input.PlatformingMovementController;
 public class Player extends Creature implements IUpdateable {
     public Player() {
         addController(new PlatformingMovementController<>(this));
+    }
 
+    public Camera getCamera() {
+        final Camera camera = new PositionLockCamera(this);
+        camera.setClampToMap(true);
+        camera.setZoom(0.3f, 10);
+        return camera;
     }
 
     @Override
