@@ -7,7 +7,7 @@ public class Player {
         this.stats = stats;
     }
 
-    public Stats getStats(){
+    public Stats getStats() {
         return stats;
     }
 }

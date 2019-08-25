@@ -10,6 +10,12 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    main.java.srcDir "src"
+    test.java.srcDir "test"
+    main.resources.srcDirs = ["sprites", "audio", "maps", "misc", "res"]
+}
+
 dependencies {
     compile group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.5.1'
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.2'
