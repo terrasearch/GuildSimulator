@@ -4,6 +4,7 @@ import at.englert.bertram.guildsimulator.control.game.GameManager;
 import at.englert.bertram.guildsimulator.view.element.Player;
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.entities.Spawnpoint;
+import de.gurkenlabs.litiengine.environment.Environment;
 
 public class PrototypeMap extends GameScreenBase {
     private static final String mapName = "PrototypeMap1";
@@ -11,14 +12,15 @@ public class PrototypeMap extends GameScreenBase {
 
     public PrototypeMap(final GameManager gameManager) {
         super(gameManager, mapName);
-        Game.world().setCamera(player.getCamera());
-        Game.world().setGravity(120);
-        Game.world().addLoadedListener(e -> {
-            Spawnpoint enter = e.getSpawnpoint("spawn");
-            if (enter != null) {
-                enter.spawn(player);
-            }
-        });
-        Game.world().loadEnvironment(mapName);
+        Game.world().addLoadedListener(this::loaded);
+        setCamera(player.getCamera());
+        loadMap();
+    }
+
+    private void loaded(Environment e) {
+        Spawnpoint enter = e.getSpawnpoint("spawn");
+        if (enter != null) {
+            enter.spawn(player);
+        }
     }
 }

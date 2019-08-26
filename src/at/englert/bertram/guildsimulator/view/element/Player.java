@@ -8,7 +8,7 @@ import de.gurkenlabs.litiengine.annotation.MovementInfo;
 import de.gurkenlabs.litiengine.entities.Creature;
 import de.gurkenlabs.litiengine.graphics.Camera;
 import de.gurkenlabs.litiengine.graphics.PositionLockCamera;
-import de.gurkenlabs.litiengine.input.PlatformingMovementController;
+import de.gurkenlabs.litiengine.input.KeyboardEntityController;
 
 @EntityInfo(width = 18, height = 18)
 @MovementInfo(velocity = 70)
@@ -16,7 +16,7 @@ import de.gurkenlabs.litiengine.input.PlatformingMovementController;
 @AnimationInfo(spritePrefix = "gurknukem")
 public class Player extends Creature implements IUpdateable {
     public Player() {
-        addController(new PlatformingMovementController<>(this));
+        addController(new KeyboardEntityController<>(this));
     }
 
     public Camera getCamera() {
