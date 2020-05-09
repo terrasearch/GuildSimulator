@@ -1,0 +1,6 @@
+main threw an exception:
+java.lang.NullPointerException
+	at at.englert.bertram.guildsimulator.view.screen.MainMenuScreen.prepare(MenuScreen.java:30)
+	at de.gurkenlabs.litiengine.gui.screens.ScreenManager.display(ScreenManager.java:67)
+	at at.englert.bertram.guildsimulator.control.game.GameManager.switchScreen(GameManager.java:27)
+	at at.englert.bertram.guildsimulator.Main.main(Main.java:13)

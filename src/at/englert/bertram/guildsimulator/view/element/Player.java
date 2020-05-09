@@ -13,7 +13,7 @@ import de.gurkenlabs.litiengine.input.KeyboardEntityController;
 @EntityInfo(width = 18, height = 18)
 @MovementInfo(velocity = 70)
 @CollisionInfo(collisionBoxWidth = 8, collisionBoxHeight = 16, collision = true)
-@AnimationInfo(spritePrefix = "gurknukem")
+@AnimationInfo(spritePrefix = "guy")
 public class Player extends Creature implements IUpdateable {
     public Player() {
         addController(new KeyboardEntityController<>(this));

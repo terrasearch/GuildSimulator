@@ -1,3 +1,6 @@
 /.gradle/
 /build/
 /.idea/
+/maps/game.log
+/maps/utiliti-v0.4.20-alpha.exe
+/maps/config.properties

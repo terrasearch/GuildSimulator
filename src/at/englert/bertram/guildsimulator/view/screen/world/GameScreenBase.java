@@ -1,4 +1,4 @@
-package at.englert.bertram.guildsimulator.view.screen;
+package at.englert.bertram.guildsimulator.view.screen.world;
 
 import at.englert.bertram.guildsimulator.control.game.GameManager;
 import de.gurkenlabs.litiengine.Game;
@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 
 public class GameScreenBase extends GameScreen {
     protected final GameManager gameManager;
-    protected String mapName;
+    private String mapName;
 
     public GameScreenBase(final GameManager gameManager, final String mapName) {
         super(mapName);
@@ -19,7 +19,6 @@ public class GameScreenBase extends GameScreen {
         this.gameManager = gameManager;
         registerKeyEvent(KeyEvent.VK_ESCAPE, (key -> gameManager.stopGame()));
     }
-
 
     public GameScreenBase(final GameManager gameManager) {
         this.gameManager = gameManager;
@@ -36,5 +35,8 @@ public class GameScreenBase extends GameScreen {
 
     protected void setCamera(final Camera camera) {
         Game.world().setCamera(camera);
+    }
+
+    public void unload() {
     }
 }

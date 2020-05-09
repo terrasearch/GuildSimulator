@@ -1,4 +1,4 @@
-package at.englert.bertram.guildsimulator.view.screen;
+package at.englert.bertram.guildsimulator.view.screen.world;
 
 import at.englert.bertram.guildsimulator.control.game.GameManager;
 import at.englert.bertram.guildsimulator.view.element.Player;
@@ -13,11 +13,11 @@ public class PrototypeMap extends GameScreenBase {
     public PrototypeMap(final GameManager gameManager) {
         super(gameManager, mapName);
         Game.world().addLoadedListener(this::loaded);
-        setCamera(player.getCamera());
         loadMap();
     }
 
     private void loaded(Environment e) {
+        setCamera(player.getCamera());
         Spawnpoint enter = e.getSpawnpoint("spawn");
         if (enter != null) {
             enter.spawn(player);
