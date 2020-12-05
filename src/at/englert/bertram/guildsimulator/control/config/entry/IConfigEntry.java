@@ -1,7 +1,7 @@
 package at.englert.bertram.guildsimulator.control.config.entry;
 
-public interface IConfigEntry<T> {
+public interface IConfigEntry {
     String getKey();
 
-    T getValue();
+    String getValue();
 }

@@ -2,11 +2,11 @@ package at.englert.bertram.guildsimulator.control.config.entry;
 
 import java.util.Objects;
 
-public class ConfigEntry<T> implements IConfigEntry<T> {
+public class ConfigEntry implements IConfigEntry {
     private final String key;
-    private final T value;
+    private final String value;
 
-    public ConfigEntry(String key, T value) {
+    public ConfigEntry(String key, String value) {
         this.key = key;
         this.value = value;
     }
@@ -17,7 +17,7 @@ public class ConfigEntry<T> implements IConfigEntry<T> {
     }
 
     @Override
-    public T getValue() {
+    public String getValue() {
         return value;
     }
 
@@ -25,7 +25,7 @@ public class ConfigEntry<T> implements IConfigEntry<T> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        final ConfigEntry<?> that = (ConfigEntry<?>) o;
+        final ConfigEntry that = (ConfigEntry) o;
         return Objects.equals(key, that.key) &&
                 Objects.equals(value, that.value);
     }

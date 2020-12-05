@@ -6,7 +6,7 @@ import at.englert.bertram.guildsimulator.view.screen.MainMenuScreen;
 /**
  * Entry Point of the Application
  */
-public class Main {
+public class MainGraphical {
     public static void main(final String[] args) {
         final GameManager gameManager = new GameManager();
         gameManager.startGame(args);

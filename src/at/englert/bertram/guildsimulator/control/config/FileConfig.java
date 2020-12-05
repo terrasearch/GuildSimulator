@@ -17,7 +17,7 @@ import java.util.List;
 
 public class FileConfig implements IConfig {
     private static final Logger log = LogManager.getLogger(FileConfig.class);
-    private final List<IConfigEntry> configEntries = new ArrayList<IConfigEntry>();
+    private final List<IConfigEntry> configEntries = new ArrayList<>();
     private final Path settingsPath;
 
     public FileConfig(final Path filePath) {
@@ -28,7 +28,7 @@ public class FileConfig implements IConfig {
     public void load() throws IOException, ParseException {
         log.debug("Loaded File");
         final File settingsFile = settingsPath.toFile();
-        try (final FileReader reader = new FileReader(settingsPath.toFile())) {
+        try (final FileReader reader = new FileReader(settingsFile)) {
             final JSONParser jsonParser = new JSONParser();
             final JSONArray jsonArray = (JSONArray) jsonParser.parse(reader);
         }

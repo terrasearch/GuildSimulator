@@ -1,13 +1,22 @@
 package at.englert.bertram.guildsimulator.model;
 
-public class Player {
-    private final Stats stats;
+public class Player extends ModelBase {
+    private long gold = 0;
+    private PlayerLevel playerLevel = new PlayerLevel();
 
-    public Player(final Stats stats) {
-        this.stats = stats;
+    public long getGold() {
+        return gold;
     }
 
-    public Stats getStats() {
-        return stats;
+    public void setGold(long gold) {
+        this.gold = gold;
+    }
+
+    public PlayerLevel getPlayerLevel() {
+        return playerLevel;
+    }
+
+    public void setPlayerLevel(PlayerLevel playerLevel) {
+        this.playerLevel = playerLevel;
     }
 }
