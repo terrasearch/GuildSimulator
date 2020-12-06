@@ -25,4 +25,9 @@ public class ViewModelBase<T extends ModelBase> implements IProperty {
     public void propertyChanged() {
         changedListeners.forEach(IPropertyChangedListener::onPropertyChanged);
     }
+
+    @Override
+    public void propertyChanged(String identifier) {
+        changedListeners.forEach(listener -> listener.onPropertyChanged(identifier));
+    }
 }

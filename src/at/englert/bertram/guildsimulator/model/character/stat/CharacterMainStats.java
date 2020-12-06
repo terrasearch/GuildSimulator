@@ -60,4 +60,8 @@ public class CharacterMainStats extends ModelBase {
     public CharacterStat getHeal() {
         return heal;
     }
+
+    public int getRarity() {
+        return rarity;
+    }
 }

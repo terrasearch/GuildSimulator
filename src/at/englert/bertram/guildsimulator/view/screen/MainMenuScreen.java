@@ -35,26 +35,20 @@ public class MainMenuScreen extends GameScreenBase {
     }
 
     private void accept(Integer selectedEntry) {
+        //this.manager.switchScreen(new LoadMenu(this.manager));
+        //this.manager.switchScreen(new SettingsMenu(this.manager));
         switch (selectedEntry) {
-            case MainMenu.MenuEntry.newGame:
+            case MainMenu.MenuEntry.newGame -> {
                 log.debug("New Game Pressed");
                 gameManager.switchScreen(new PrototypeMap(gameManager));
-                break;
-            case MainMenu.MenuEntry.loadGame:
-                log.debug("Load Game pressed");
-                //this.manager.switchScreen(new LoadMenu(this.manager));
-                break;
-            case MainMenu.MenuEntry.settings:
-                log.debug("Settings pressed");
-                //this.manager.switchScreen(new SettingsMenu(this.manager));
-                break;
-            case MainMenu.MenuEntry.quit:
+            }
+            case MainMenu.MenuEntry.loadGame -> log.debug("Load Game pressed");
+            case MainMenu.MenuEntry.settings -> log.debug("Settings pressed");
+            case MainMenu.MenuEntry.quit -> {
                 log.debug("Quit pressed");
                 this.gameManager.stopGame();
-                break;
-            default:
-                log.warn("Default method on selected Entry, NOT BOUND");
-                break;
+            }
+            default -> log.warn("Default method on selected Entry, NOT BOUND");
         }
     }
 }
