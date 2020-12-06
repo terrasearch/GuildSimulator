@@ -1,0 +1,8 @@
+Wed Apr 22 04:36:49 CEST 2020 Main Update Loop threw an exception:
+java.lang.NullPointerException
+	at de.gurkenlabs.litiengine.environment.Environment.render(Environment.java:2041)
+	at de.gurkenlabs.litiengine.environment.Environment.render(Environment.java:1886)
+	at de.gurkenlabs.utiliti.components.Editor.render(Editor.java:129)
+	at de.gurkenlabs.litiengine.graphics.RenderComponent.render(RenderComponent.java:123)
+	at de.gurkenlabs.litiengine.GameLoop.process(GameLoop.java:87)
+	at de.gurkenlabs.litiengine.UpdateLoop.run(UpdateLoop.java:57)
